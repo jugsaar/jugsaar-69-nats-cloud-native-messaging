@@ -1,0 +1,9 @@
+services:
+  jugsaar-nats:
+    image: 'nats:2.10.14'
+    ports:
+      - "8222:8222"
+      - "4222:4222"
+    command: -c /etc/my-server.conf --name acme-nats -p 4222
+    volumes:
+      - ./config/server.conf:/etc/my-server.conf
